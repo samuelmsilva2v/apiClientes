@@ -16,12 +16,14 @@ import com.example.demo.domain.models.dtos.ClienteRequestDto;
 import com.example.demo.domain.models.entities.Cliente;
 import com.example.demo.domain.services.impl.ClienteRepositoryImpl;
 
+import jakarta.validation.Valid;
+
 @RestController
 @RequestMapping("/api/clientes")
 public class ClienteController {
 
 	@PostMapping
-	public String post(@RequestBody ClienteRequestDto dto) {
+	public String post(@RequestBody @Valid ClienteRequestDto dto) {
 
 		var cliente = new Cliente();
 
@@ -37,7 +39,7 @@ public class ClienteController {
 	}
 
 	@PutMapping("{id}")
-	public String put(@PathVariable UUID id, @RequestBody ClienteRequestDto dto) {
+	public String put(@PathVariable UUID id, @RequestBody @Valid ClienteRequestDto dto) {
 
 		var clienteRepository = new ClienteRepositoryImpl();
 

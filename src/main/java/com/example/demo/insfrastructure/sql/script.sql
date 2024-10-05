@@ -8,10 +8,10 @@ USE bdApiClientes;
 
 # Criando a tabela de clientes no banco de dados
 CREATE TABLE cliente(
-	id			CHAR(36)		PRIMARY KEY,
-	nome			VARCHAR(150)	NOT NULL,
+	id				CHAR(36)		PRIMARY KEY,
+	nome			VARCHAR(100)	NOT NULL,
 	email			VARCHAR(100)	NOT NULL,
-	telefone		VARCHAR(15)		NOT NULL,
+	telefone		VARCHAR(11)		NOT NULL,
 	datacadastro	TIMESTAMP		DEFAULT CURRENT_TIMESTAMP
 );
 
