@@ -1,0 +1,30 @@
+networks:
+ apiclientes-network: 
+  driver: bridge
+
+services: 
+ apiclientes: 
+  build:
+   context: .
+   dockerfile: Dockerfile
+  ports:
+   - "8080:8080"
+  networks:
+    - apiclientes-network
+  depends_on:
+      - mysql
+
+ mysql:
+    image: mysql:8.0
+    container_name: mysql_db
+    ports:
+      - "3306:3306"
+    environment:
+      MYSQL_ROOT_PASSWORD: password
+      MYSQL_DATABASE: bd_apiclientes
+    volumes:
+      - db_data:/var/lib/mysql
+
+volumes:
+  db_data:
+

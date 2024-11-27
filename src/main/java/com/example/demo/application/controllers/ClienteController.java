@@ -76,7 +76,7 @@ public class ClienteController {
 	}
 
 	@GetMapping("{id}")
-	public Cliente getById(UUID id) {
+	public Cliente getById(@PathVariable UUID id) {
 
 		var clienteRepository = new ClienteRepositoryImpl();
 
