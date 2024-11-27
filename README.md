@@ -10,6 +10,7 @@ API RESTful desenvolvida com Spring Boot, oferecendo um CRUD para o gerenciament
 * MySQL
 * Bean Validation
 * Swagger
+* Docker
 
 ## Endpoints:
 | Método | Endpoint              | Descrição                   |
@@ -56,6 +57,7 @@ com.example.demo
 - Java 21 ou superior
 - Spring Boot 3.3.5
 - MySQL
+- Docker
 
 #### 1. Criação do banco de dados MySQL
 
@@ -88,6 +90,12 @@ DESC cliente;
 
 #### 4. Acesse a aplicação:
   - Documentação da API: http://localhost:8080/swagger-ui/index.html
+
+#### 5. Rodar aplicação no Docker
+```powershell
+docker-compose up -d
+```
+
 
 ### Autor
 - Samuel Maciel da Silva
